@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean View</title>
+  <style>
+    /* 隐藏网页原本的标题栏 */
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="https://ys.xn--yhqu5zs87a.top/" id="mySite"></iframe>
+
+  <script>
+    // 注入JS，隐藏指定元素（假设网页标题栏有特定class或id）
+    document.getElementById('mySite').addEventListener('load', function() {
+      const iframe = this.contentWindow.document;
+      // 举例：隐藏网站的标题 (title 或 header 区域)
+      const title = iframe.querySelector('header, h1, .title, #title');
+      if (title) title.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
